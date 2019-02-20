@@ -3,7 +3,6 @@ package com.example.helloworld;
 public class Greeting{
 
     private final Long id;
-
     private final String content;
 
     public Greeting(long id, String content) {
