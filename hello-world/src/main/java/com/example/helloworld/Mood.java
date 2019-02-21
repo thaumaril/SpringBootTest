@@ -6,8 +6,8 @@ import java.util.Random;
 
 public class Mood {
 
-    public final String mood;
-    public final Timestamp dateTime;
+    private final String mood;
+    private final Timestamp dateTime;
 
     public Mood() {
         this.mood = getRandomMood();
@@ -16,23 +16,9 @@ public class Mood {
     }
 
     private String getRandomMood(){
-        String newMood = "";
-        int randonNumber = new Random().nextInt(3);
-
-        switch(randonNumber) {
-            case 0:
-            newMood = "Happy";
-            break;
-
-            case 1:
-            newMood = "Sad";
-            break;
-
-            case 2:
-            newMood = "Angry";
-            break;
-        }
-        return newMood;
+        String newMood[] = ["Happy","Sad","Angry"];
+        int randomNumber = new Random().nextInt(newMood.length);
+        return newMood[randomNumber];
     }
 
     /**
