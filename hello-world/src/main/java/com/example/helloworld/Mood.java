@@ -6,8 +6,8 @@ import java.util.Random;
 
 public class Mood {
 
-    public final String mood;
-    public final Timestamp dateTime;
+    private final String mood;
+    private final Timestamp dateTime;
 
     public Mood() {
         this.mood = getRandomMood();
