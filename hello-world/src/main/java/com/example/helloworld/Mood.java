@@ -16,7 +16,7 @@ public class Mood {
     }
 
     private String getRandomMood(){
-        String newMood[] = ["Happy","Sad","Angry"];
+        String newMood[] = {"Happy","Sad","Angry"};
         int randomNumber = new Random().nextInt(newMood.length);
         return newMood[randomNumber];
     }
