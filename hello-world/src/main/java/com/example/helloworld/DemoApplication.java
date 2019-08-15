@@ -1,23 +1,24 @@
-package com.example.helloworld;
+ package com.example.helloworld;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.example.helloworld.model.Database;
 
 import java.util.concurrent.atomic.AtomicLong;
 
-
+@CrossOrigin
 @SpringBootApplication
 @RestController
 public class DemoApplication {
 
 	private static final String template = "Hello";
 	private final AtomicLong count = new AtomicLong();
-
-
+	
 	@GetMapping(value="/greeting")
     public Greeting greetings(@RequestParam(value = "name", defaultValue = "World") String name) {
         return new Greeting(count.incrementAndGet(), template + " " + name);
@@ -34,19 +35,15 @@ public class DemoApplication {
 	}
 	
 	@GetMapping(value="/newmood")
-	@ResponseBody
 	public Mood getNeMood() {
 		return new Mood();
 	}
 	
-	@GetMapping(value="/posts")
-	@ResponseBody
-	public String SayHello() {
-		return "[{\"aa\":\"bb\"}]";
-	}
+	
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
+		
 	}
 
 }

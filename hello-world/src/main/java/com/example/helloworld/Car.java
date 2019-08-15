@@ -5,6 +5,7 @@ public class Car {
     private final String brand;
     private final String color;
     private final int power;
+    
 
     public Car(String brand, String color, int power) {
         this.brand = brand;
@@ -34,5 +35,6 @@ public class Car {
     public int getPower() {
         return power;
     }
+
 
 }

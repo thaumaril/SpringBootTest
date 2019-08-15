@@ -38,6 +38,40 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+  			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java8</artifactId>
+			<version>4.2.0</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-spring</artifactId>
+			<version>4.2.0</version>
+  			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+		  <groupId>io.cucumber</groupId>
+		  <artifactId>cucumber-junit</artifactId>
+		  <version>4.2.0</version>
+		  <scope>test</scope>
+		</dependency>
+		
+		<dependency>
+		  <groupId>net.masterthought</groupId>
+		  <artifactId>cucumber-reporting</artifactId>
+		  <version>4.2.3</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.1-api -->
+		<dependency>
+		    <groupId>org.hibernate.javax.persistence</groupId>
+		    <artifactId>hibernate-jpa-2.1-api</artifactId>
+		    <version>1.0.2.Final</version>
+		</dependency>
 	</dependencies>
 
 	<build>
