@@ -7,5 +7,5 @@ Feature: Is it Friday yet?
     Then I should be told "Nope"
 
    Scenario: Call REST-Service and Check Status
-   When I call the REST-Endpoint "local"
+   When I call the REST-Endpoint "http://localhost:8081/newmood"
    Then I suspect status 200

@@ -1,8 +1,13 @@
 package com.example.helloworld;
 
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import cucumber.api.java.en.Then;
+
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 import static org.junit.Assert.*;
 
 
@@ -12,9 +17,12 @@ class IsItFriday {
     }
 }
 
+
 public class CucumberStepDef {
     private String today;
     private String actualAnswer;
+    private URL url;
+    private HttpURLConnection conn;
 
     @Given("^today is \"([^\"]*)\"$")
     public void today_is(String today) {
@@ -33,13 +41,17 @@ public class CucumberStepDef {
 
 
     @When("I call the REST-Endpoint {string}")
-    public void call_rest_endpoint(String string){
-        throw new cucumber.api.PendingException();
+    public void call_rest_endpoint(String endpoint) throws java.io.IOException {
+        url = new URL(endpoint);
+        conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("GET");
+        conn.setRequestProperty("Accept", "application/json");
     };
 
     @Then("I suspect status {int}")
-    public void check_httpStatus(Integer int1){
-        throw new cucumber.api.PendingException();
+    public void check_httpStatus(Integer int1) throws java.io.IOException{
+        assertEquals((long)int1, (long)conn.getResponseCode());
+        conn.disconnect();
     };
 }
 
