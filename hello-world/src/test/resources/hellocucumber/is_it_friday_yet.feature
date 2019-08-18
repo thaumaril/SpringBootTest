@@ -9,3 +9,8 @@ Feature: Is it Friday yet?
    Scenario: Call REST-Service and Check Status
    When I call the REST-Endpoint "http://localhost:8081/newmood"
    Then I suspect status 200
+
+   Scenario: Call REST-Service and Check JSON
+   When I call the REST-Endpoint "http://localhost:8081/newmood"
+   #Then I suspect status 200
+   Then I suspect JSON
