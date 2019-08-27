@@ -1,13 +1,12 @@
  package com.example.helloworld;
 
+import com.example.helloworld.data.Mood;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.example.helloworld.model.Database;
 
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -34,8 +33,9 @@ public class DemoApplication {
 		return new Car(brand, color, power);
 	}
 	
-	@GetMapping(value="/newmood")
-	public Mood getNeMood() {
+	@GetMapping(value="/mood/new")
+	public Mood createNewMood ()
+	{
 		return new Mood();
 	}
 	

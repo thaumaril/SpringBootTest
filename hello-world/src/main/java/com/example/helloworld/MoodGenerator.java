@@ -4,12 +4,12 @@ import java.sql.Timestamp;
 import java.lang.System;
 import java.util.Random;
 
-public class Mood {
+public class MoodGenerator {
 
     private final String mood;
     private final Timestamp dateTime;
 
-    public Mood() {
+    public MoodGenerator() {
         this.mood = getRandomMood();
         this.dateTime = new Timestamp(System.currentTimeMillis());
 
