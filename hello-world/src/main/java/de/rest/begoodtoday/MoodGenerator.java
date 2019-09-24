@@ -1,4 +1,4 @@
-package com.example.helloworld;
+package de.rest.begoodtoday;
 
 import java.sql.Timestamp;
 import java.lang.System;

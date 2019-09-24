@@ -1,4 +1,4 @@
-package com.example.helloworld;
+package de.rest.begoodtoday;
 
 
 import cucumber.api.CucumberOptions;

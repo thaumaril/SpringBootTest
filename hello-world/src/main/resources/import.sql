@@ -1,0 +1,1 @@
+INSERT INTO moods(id,mood,timestamp) values (0,'sad','2019-09-24T16:20:53.602+0000');

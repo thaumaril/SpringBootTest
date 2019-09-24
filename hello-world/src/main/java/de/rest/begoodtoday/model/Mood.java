@@ -1,15 +1,15 @@
-package com.example.helloworld.data;
+package de.rest.begoodtoday.model;
 
-import com.example.helloworld.MoodGenerator;
+import de.rest.begoodtoday.MoodGenerator;
 import lombok.*;
 
-import javax.annotation.sql.DataSourceDefinition;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.sql.Time;
+import javax.persistence.Table;
 import java.sql.Timestamp;
 
 @Entity
+@Table(name = "moods")
 @Data
 public class Mood {
 
@@ -22,10 +22,8 @@ public class Mood {
 	@Id
 	private long id;
 
-	@Getter @Setter
 	private String mood;
 
-	@Getter @Setter
 	private Timestamp timestamp;
 	
 }

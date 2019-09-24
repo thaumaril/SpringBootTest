@@ -5,3 +5,4 @@ Feature: Resource_mood Cucumber's Tests
   Scenario: Call the Rest-Resource /mood/new and expect a valid answer
     When the Rest-Resource /mood/new is called
     Then the expected answer is OK
+
