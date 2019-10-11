@@ -3,27 +3,27 @@ package de.rest.begoodtoday.model;
 import de.rest.begoodtoday.MoodGenerator;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import java.sql.Timestamp;
+import javax.persistence.*;
+import javax.validation.constraints.Size;
+import java.util.Date;
 
 @Entity
-@Table(name = "moods")
 @Data
 public class Mood {
 
 	public Mood(){
-		MoodGenerator moodGen = new MoodGenerator();
-		mood = moodGen.getMood();
-		timestamp = moodGen.getDateTime();
+		mood = MoodGenerator.getRandomMood();
+		timestamp = new Date(System.currentTimeMillis());
 	}
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
+	@Size(max=250)
 	private String mood;
 
-	private Timestamp timestamp;
-	
+	@Temporal(TemporalType.DATE)
+	private Date timestamp;
+
 }

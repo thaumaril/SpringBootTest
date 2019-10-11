@@ -6,9 +6,13 @@ server:
 spring:
   main:
     banner-mode: "off"
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
   jpa:
-    database: h2
-    hibernate:
-      dialect: org.hibernate.dialect.H2Dialect
-      ddl-auto: create-drop
-      sql: import.sql
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
