@@ -32,11 +32,7 @@ public class CucumberStepDef extends CucumberHelperMethods {
 
     @Then("^the amount of Moods in the Database is (.*)$")
     public void theAmountOfMoodsInTheDatabaseIs(int expectedAmount){
-        int actualAmount = 0;
-        for (Mood m : moodRepository.findAll()){
-            actualAmount++;
-        }
-        assertThat(actualAmount).isEqualTo(expectedAmount);
+        assertThat(moodRepository.count()).isEqualTo(expectedAmount);
     }
 
 
