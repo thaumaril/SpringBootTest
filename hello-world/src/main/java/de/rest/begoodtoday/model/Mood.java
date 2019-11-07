@@ -23,7 +23,7 @@ public class Mood {
 	@Size(max=250)
 	private String mood;
 
-	@Temporal(TemporalType.DATE)
-	private Date timestamp;
+	@JsonIgnore
+	private @Nullable Instant timestamp;
 
 }
