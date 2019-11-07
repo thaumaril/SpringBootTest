@@ -13,7 +13,7 @@ public class Mood {
 
 	public Mood(){
 		mood = MoodGenerator.getRandomMood();
-		timestamp = new Date(System.currentTimeMillis());
+		timestamp = Instant.now();
 	}
 
 	@Id
